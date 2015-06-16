@@ -167,12 +167,12 @@ curut.post(function(req,res,next){
 
 
 //now for Single route (GET,DELETE,PUT)
-var curut2 = router.route('/user/:id');
+var curut2 = router.route('/deploy/:id');
 
 /*------------------------------------------------------
 route.all is extremely useful. you can use it to do
 stuffs for specific routes. for example you need to do
-a validation everytime route /api/user/:id it hit.
+a validation everytime route /api/deploy/:id it hit.
 
 remove curut2.all() if you dont want it
 ------------------------------------------------------*/
