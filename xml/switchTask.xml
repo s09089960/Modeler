@@ -1,0 +1,4 @@
+<switchTask id="openLight" name="openLight">
+        <sensor_id>light-s-01</sensor_id>
+        <mode></mode>
+</switchTask>

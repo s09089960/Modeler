@@ -1,0 +1,5 @@
+<sequenceFlow id= name="<![CDATA[>=50ppm]]>" sourceRef= targetRef=>
+      <conditionExpression xsi:type="tFormalExpression">
+<![CDATA[${ppm>=50}]]>
+</conditionExpression>
+</sequenceFlow>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=title%></title>
+        <script type="text/javascript" src="/../js/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" href="/../css/style.css">
+    </head>
+<body>
+<form method="post" action="" id="the-form">
+    <table cellpadding="11">
+    <tr>
+        <td class="label">sensor_id</td><td>: <input type="text" name="sensor_id" value="<%=data[0].sensor_id%>"></td>
+     </tr>
+    <tr>
+        <td class="label">type</td><td>: <input type="text" name="type" value="<%=data[0].type%>"></td>
+     </tr>
+      <tr>
+        <td class="label">location_x</td><td>: <input type="float" name="location_x" value="<%=data[0].location_x%>"></td>
+     </tr>
+     <tr>
+        <td class="label">location_y</td><td>: <input type="float" name="location_y" value="<%=data[0].location_y%>"></td>
+     </tr>
+     <tr>
+        <td class="label"></td>
+        <td>
+            &nbsp; <input type="button" value="Save" onClick="saveSensor()">
+        </td>
+     </tr>
+    </table>
+</form>
+ <script>
+    
+        function saveSensor(){
+           
+           $.ajax({
+            
+            url:"/api/user/"+<%=data[0].id%>,
+            type:"put",
+            data:$("#the-form").serialize(),
+            success:function(res){
+                
+                window.location.href = '/api/user';
+                return false;
+            },
+            error:function(xhr, status, error){
+                
+                console.log(xhr.responseText);
+                var err = '';
+                $.each(JSON.parse(xhr.responseText) , function(i, item) {
+                   
+                     err +='<li>'+item.msg+'</li>';
+                });
+                $(".err-area").html(err);    
+                return false;
+            }
+            
+           });
+        }
+    
+    </script>
+</body>
+</html>

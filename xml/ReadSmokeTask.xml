@@ -1,0 +1,7 @@
+<serviceTask id= name= activiti:class="com.diplab.activiti.smoke.delegate.ReadSmokeTask">
+      <extensionElements>
+        <activiti:field name="id">
+          <activiti:string><![CDATA[Smoke-01]]></activiti:string>
+        </activiti:field>
+      </extensionElements>
+</serviceTask>

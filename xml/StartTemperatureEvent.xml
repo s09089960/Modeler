@@ -1,0 +1,8 @@
+<startEvent id="startevent1" name="Start">
+			<diplabEventDefinition>
+				<mode></mode>
+				<condition></condition>
+				<time></time>
+				<sensor_id></sensor_id>
+			</diplabEventDefinition>
+</startEvent>
